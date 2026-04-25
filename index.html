@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>클로드코드 뽀개기 — Part 01 인트로 데크</title>
+<style>
+  :root { --brand:#FC1C49; --bg:#FFFFFF; --text:#000; --muted:#5B5B5B; --border:#E6E6E6; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo", sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 80px 24px; max-width: 880px; margin-left: auto; margin-right: auto; }
+  h1 { font-size: 44px; letter-spacing: -0.02em; margin: 0 0 12px; }
+  .sub { color: var(--muted); font-size: 18px; margin: 0 0 48px; }
+  .grid { display: grid; gap: 16px; }
+  a.card { display: block; padding: 28px 32px; border: 1px solid var(--border); border-radius: 16px; text-decoration: none; color: inherit; transition: border-color .15s, transform .15s; }
+  a.card:hover { border-color: var(--brand); transform: translateY(-2px); }
+  .label { font-size: 13px; font-weight: 700; color: var(--brand); letter-spacing: 0.12em; text-transform: uppercase; }
+  .title { font-size: 28px; font-weight: 800; margin: 6px 0 8px; letter-spacing: -0.015em; }
+  .desc { font-size: 16px; color: var(--muted); }
+  footer { margin-top: 64px; color: var(--muted); font-size: 14px; text-align: center; }
+</style>
+</head>
+<body>
+  <h1>클로드코드 뽀개기</h1>
+  <p class="sub">Part 01 · 인트로 — 슬라이드 데크 (Marp 기반 HTML)</p>
+  <div class="grid">
+    <a class="card" href="./clip-01/">
+      <div class="label">CLIP 01</div>
+      <div class="title">오리엔테이션</div>
+      <div class="desc">강사 소개 + 강의 전체 흐름 안내</div>
+    </a>
+    <a class="card" href="./clip-02/">
+      <div class="label">CLIP 02</div>
+      <div class="title">이 강의를 듣는 방법</div>
+      <div class="desc">결과물 9개 + AI Native 4단계 + 수준별 학습 가이드</div>
+    </a>
+    <a class="card" href="./clip-03/">
+      <div class="label">CLIP 03</div>
+      <div class="title">CC101 &amp; GPTaku Plugin 소개</div>
+      <div class="desc">한국어 입문 가이드 + 11개 스킬 패키지 + 해커톤 스토리</div>
+    </a>
+  </div>
+  <footer>By. 이철로 (지피타쿠) · Fastcampus</footer>
+</body>
+</html>
