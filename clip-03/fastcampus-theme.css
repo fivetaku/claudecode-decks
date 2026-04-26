@@ -88,6 +88,7 @@
   --frame-top:    80px;
   --frame-bottom: 81px;
   --frame-inset:  81px;
+  --frame-rule-color: var(--border-rule);
 }
 
 /* ===== BASE SLIDE (Fastcampus 라이트 베이스) ===== */
@@ -126,18 +127,20 @@ section::before {
   z-index: 10;
 }
 
-/* ::after는 더 이상 사용하지 않음 (헤어라인은 ::before가 단독 처리) */
+/* ::after는 다른 클래스 (peak, screenshot, banner.dark)에서 색상 override 시 사용 */
 section::after {
   content: none;
 }
 
-/* 헤어라인 비활성화: 표지(banner) + 다크 peak 슬라이드 */
+/* 헤어라인 비활성화: 표지(banner) + 다크 peak/thanks 슬라이드 */
 section.banner::before,
 section.peak::before,
 section.banner.dark::before,
 section.thanks::before {
   display: none;
 }
+
+
 
 /* ===== TYPOGRAPHY (템플릿 pt×2 스케일) ===== */
 section h1 {
@@ -270,6 +273,12 @@ section.peak {
   padding: 120px var(--frame-inset);
 }
 
+section.peak,
+section.screenshot,
+section.banner.dark {
+  --frame-rule-color: #3A3A3A;
+}
+
 section.peak > * {
   margin: 0;
 }
@@ -338,6 +347,7 @@ section.peak em {
 
 /* ===== SCREENSHOT (O3 터미널 풀-블리드) ===== */
 section.screenshot {
+  --frame-rule-color: #3A3A3A;
   background:
     url('logos/fastcampus-logo-gray.png') no-repeat 58px calc(100% - 17px) / 190px auto,
     var(--bg-peak-alt);
@@ -1320,6 +1330,10 @@ section.banner.dark {
     var(--bg-peak-alt) !important;
   color: var(--text-on-peak);
 }
+section.banner.dark::before {
+  --frame-rule-color: #3A3A3A;
+}
+
 /* ----- placeholder 시각 처리 ----- */
 .placeholder,
 section.hero .profile-img:empty,
@@ -1601,19 +1615,3 @@ section.hero .bio-extra strong {
   color: #D97757 !important;
 }
 
-/* === [P5 패치] 하단 헤어라인 강제 (다크/라이트 슬라이드 모두 표시) === */
-section::after {
-  content: "" !important;
-  position: absolute !important;
-  bottom: var(--frame-bottom, 81px) !important;
-  left: var(--frame-inset, 81px) !important;
-  right: var(--frame-inset, 81px) !important;
-  height: 1px !important;
-  background: var(--border-rule, #BBBBBB) !important;
-  pointer-events: none;
-  z-index: 1;
-}
-section.peak::after,
-section.screenshot::after {
-  background: #3A3A3A !important;
-}
